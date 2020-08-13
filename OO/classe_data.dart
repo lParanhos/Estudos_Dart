@@ -11,6 +11,12 @@ class Data {
  */
 
   Data([this.dia = 1, this.mes = 1, this.ano = 1970]);
+  //Named Constructors
+  Data.com({ this.dia = 1, this.mes = 1, this.ano = 1970 });
+  Data.ultimoDiaDoAno(this.ano){
+    dia = 31;
+    mes = 12;
+  }
 
   String obterFormatada() {
     return "$dia/$mes/$ano";
@@ -43,4 +49,10 @@ main() {
   print(Data(12, 11));
   print(Data(12, 11, 2020));
 
+  print(Data.com(ano: 2020));
+
+  var dataFinal = Data.com(dia: 12, mes: 7, ano: 2024);
+  print("O Mickey será publico em $dataFinal");
+
+  print(Data.ultimoDiaDoAno(2021));
 }
